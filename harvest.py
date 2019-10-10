@@ -55,11 +55,14 @@ melon_types = make_melon_types()
 
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
+
     for melon in melon_types:
+        # for i in range(len(melon.pairings)):
+        #     pairings =
         # pairing_list = melon.pairings
         print(f'{melon.name} pairs with \n {melon.pairings}')
 
-print_pairing_info(melon_types)
+# print_pairing_info(melon_types)
 
     # Fill in the rest
 
@@ -67,6 +70,13 @@ def make_melon_type_lookup(melon_types):
     """Takes a list of MelonTypes and returns a dictionary of melon type by code."""
 
     # Fill in the rest
+    lookup = {}
+    for melon in melon_types:
+        lookup[melon.code] = lookup.get(melon.code, melon)
+
+    return lookup
+
+print(make_melon_type_lookup(melon_types))
 
 ############
 # Part 2   #
