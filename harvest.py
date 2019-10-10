@@ -27,6 +27,13 @@ class MelonType(object):
         """Replace the reporting code with the new_code."""
         self.code = new_code
 
+    def check_attributes(self):
+        """Return a list of all instance attributes
+        Helper Function
+        """
+        return [self.name, self.pairings, self.code, self.first_harvest,
+                self.color, self.is_seedless, self.is_bestseller]
+
 
 def make_melon_types():
     """Returns a list of current melon types."""
@@ -57,10 +64,10 @@ def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
 
     for melon in melon_types:
-        # for i in range(len(melon.pairings)):
-        #     pairings =
-        # pairing_list = melon.pairings
-        print(f'{melon.name} pairs with \n {melon.pairings}')
+        print(f'{melon.name} pairs with')
+        for pairing in melon.pairings:
+            print('-', pairing)
+
 
 # print_pairing_info(melon_types)
 
