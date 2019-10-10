@@ -83,7 +83,7 @@ def make_melon_type_lookup(melon_types):
 
     return lookup
 
-print(make_melon_type_lookup(melon_types))
+melons_by_id = make_melon_type_lookup(melon_types)
 
 ############
 # Part 2   #
@@ -91,14 +91,54 @@ print(make_melon_type_lookup(melon_types))
 
 class Melon(object):
     """A melon in a melon harvest."""
+    def __init__(self, melon_type, shape_rating, color_rating, harvest_field,
+                 harvested_by):
 
-    # Fill in the rest
-    # Needs __init__ and is_sellable methods
+        self.melon_type = melon_type
+        self.shape_rating = shape_rating
+        self.color_rating = color_rating
+        self.harvest_field = harvest_field
+        self.harvested_by = harvested_by
+
+    def is_sellable(self):
+        """Returns True or False whether melon can be sold
+
+        True if shape and color rating greater than 5 and not from Field 3 """
+        
+        return self.shape_rating > 5 and self.color_rating > 5 and self.harvest_field != 3
 
 def make_melons(melon_types):
     """Returns a list of Melon objects."""
+    all_melons = []
 
-    # Fill in the rest
+    melon_1 = Melon(melons_by_id['yw'], 8, 7, 2, 'Sheila')
+    all_melons.append(melon_1)
+
+    melon_2 = Melon(melons_by_id['yw'], 3, 4, 2, 'Sheila')
+    all_melons.append(melon_2)
+
+    melon_3 = Melon(melons_by_id['yw'], 9, 8, 3, 'Sheila')
+    all_melons.append(melon_3)
+
+    melon_4 = Melon(melons_by_id['cas'], 10, 6, 35, 'Sheila')
+    all_melons.append(melon_4)
+
+    melon_5 = Melon(melons_by_id['cren'], 8, 9, 35, 'Michael')
+    all_melons.append(melon_5)
+
+    melon_6 = Melon(melons_by_id['cren'], 8, 2, 35, 'Michael')
+    all_melons.append(melon_6)
+
+    melon_7 = Melon(melons_by_id['cren'], 2, 3, 4, 'Michael')
+    all_melons.append(melon_7)
+
+    melon_8 = Melon(melons_by_id['musk'], 6, 7, 4, 'Michael')
+    all_melons.append(melon_8)
+
+    melon_9 = Melon(melons_by_id['yw'], 7, 10, 3, 'Sheila')
+    all_melons.append(melon_9)
+
+    return all_melons
 
 def get_sellability_report(melons):
     """Given a list of melon object, prints whether each one is sellable."""
