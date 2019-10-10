@@ -6,7 +6,8 @@
 class MelonType(object):
     """A species of melon at a melon farm."""
 
-    def __init__(self, name, code, first_harvest, color, is_seedless, is_bestseller):
+    def __init__(self, name, code, first_harvest, color, is_seedless,
+                 is_bestseller):
         """Initialize a melon."""
 
         self.pairings = []
@@ -44,14 +45,21 @@ def make_melon_types():
     cren.add_pairing('proscuitto')
     all_melon_types.append(cren)
 
-    yw = MelonType('Yellow Watermelon', 'yw', 2013, False, True)
+    yw = MelonType('Yellow Watermelon', 'yw', 2013, 'yellow', False, True)
     yw.add_pairing('ice cream')
     all_melon_types.append(yw)
 
     return all_melon_types
 
+melon_types = make_melon_types()
+
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
+    for melon in melon_types:
+        # pairing_list = melon.pairings
+        print(f'{melon.name} pairs with \n {melon.pairings}')
+
+print_pairing_info(melon_types)
 
     # Fill in the rest
 
