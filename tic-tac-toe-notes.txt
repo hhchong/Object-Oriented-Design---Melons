@@ -1,0 +1,40 @@
+grid = [[X, -, X], [-, O, -], [-, -, -]]
+
+second_move = Move(hermione, [1, 1])
+
+
+class Board:
+
+    self.grid = [[-, -, -], [-, -, -], [-, -, -]]
+    
+
+    def display(self):
+        for line in self.grid:
+            print(line)
+
+    def add_move(self, author, [move coordinates])
+
+        self.grid[move[0][move[1]]] = author.gamepiece
+
+
+add_move(harry = "X", coordinates = [0, 0])
+    grid[coordinates[0][coordinates[1]]] = player marker
+
+class Move(self, position, player):
+    def __init__:
+        self.position = position
+        self.author = author
+
+class Player(self, name, game_piece):
+    def __init__:
+        self.name = name
+        self.game_piece = game_piece
+
+class Game(self, board, player1, player2, started_at, finished_at):
+    def __init__:
+        
+
+first_move = Move(author, position)
+
+
+grid[0][0] = "X"
